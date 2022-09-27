@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prejudice puzzle 윤정혁</title>
+</head>
+<body>
+    <img id="img01" src="images/img01.jpg" style="width:30%;">
+    <img id="img02" src="images/img02.jpg" style="width:30%;">
+    <img id="img03" src="images/img03.jpg" style="width:30%;">
+</body>
+ 
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+ 
+<script>
+    $(Image).ready(function(){
+            $("#img01").show();
+            $("#img02").hide();
+            $("#img03").hide();
+ 
+            $("#img01").click(function(){
+                $("#img01").hide();
+                $("#img02").show();
+                $("#img03").hide();
+            });
+ 
+            $("#img02").click(function(){
+                $("#img03").show();
+                $("#img02").hide();
+                $("#img01").hide();
+            });
+
+            $("#img03").click(function(){
+                $("#img01").show();
+                $("#img02").hide();
+                $("#img03").hide();
+            });
+        });
+</script>
+ 
+</html>
