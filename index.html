@@ -1,42 +1,906 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prejudice puzzle 윤정혁</title>
-</head>
-<body>
-    <img id="img01" src="images/img01.jpg" style="width:30%;">
-    <img id="img02" src="images/img02.jpg" style="width:30%;">
-    <img id="img03" src="images/img03.jpg" style="width:30%;">
-</body>
+    <html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Prejudice puzzle</title>
+        <style>
+                #gb1box {
+                    position: fixed;
+                    top: 39px;
+                    left: 1420px;
+                    width: 460px;
+                    height: 690px;
+                }
+                #base {
+                    position: fixed;
+                    top: 0px;
+                    left: 0px;
+                    width: 1920px;
+                    height: 2378px;
+                }
+                #gb2box {
+                    position: fixed;
+                    top: 39px;
+                    left: 269px;
+                    width: 230px;
+                    height: 230px;
+                }
+                #gb3box {
+                    position: fixed;
+                    top: 729px;
+                    left: 39px;
+                    width: 461px;
+                    height: 460px;
+                }
+                #gb4box {
+                    position: fixed;
+                    top: 1419px;
+                    left: 500px;
+                    width: 230px;
+                    height: 230px;
+                }
+                #gbox1 {
+                    position: fixed;
+                    top: 729px;
+                    left: 960px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #gbox2 {
+                    position: fixed;
+                    top: 959px;
+                    left: 1421px;
+                    width: 230px;
+                    height: 460px;
+                    opacity: 0.9;
+                }
+                #gbox3 {
+                    position: fixed;
+                    top: 1419px;
+                    left: 1651px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #gbox4 {
+                    position: fixed;
+                    top: 1649px;
+                    left: 960px;
+                    width: 230px;
+                    height: 460px;
+                    opacity: 0.9;
+                }
+                #gbox5 {
+                    position: fixed;
+                    top: 2109px;
+                    left: 730px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #greenbutton1 {
+                    position: fixed;
+                    top: 39px;
+                    left: 1190px;
+                    width: 231px;
+                    height: 230px;
+                    opacity: 1;
+                }
+                #greenbutton2 {
+                    position: fixed;
+                    top: 269px;
+                    left: 39px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 1;
+                }
+                #greenbutton3 {
+                    position: fixed;
+                    top: 729px;
+                    left: 500px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 1;
+                }
+                #greenbutton4 {
+                    position: fixed;
+                    top: 1419px;
+                    left: 730px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 1;
+                }
+                #rb1box {
+                    position: fixed;
+                    top: 269px;
+                    left: 730px;
+                    width: 230px;
+                    height: 230px;
+                }
+                #rb2box {
+                    position: fixed;
+                    top: 1649px;
+                    left: 1190px;
+                    width: 461px;
+                    height: 690px;
+                }
+                #rbox1 {
+                    position: fixed;
+                    top: 269px;
+                    left: 269px;
+                    width: 461px;
+                    height: 460px;
+                    opacity: 0.9;
+                }
+                #rbox2 {
+                    position: fixed;
+                    top: 729px;
+                    left: 1421px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #rbox3 {
+                    position: fixed;
+                    top: 959px;
+                    left: 500px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #rbox4 {
+                    position: fixed;
+                    top: 1419px;
+                    left: 269px;
+                    width: 231px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #redbutton1 {
+                    position: fixed;
+                    top: 39px;
+                    left: 960px;
+                    width: 230px;
+                    height: 230px;
+                }
+                #redbutton2 {
+                    position: fixed;
+                    top: 1649px;
+                    left: 730px;
+                    width: 230px;
+                    height: 230px;
+                }
+                #wb1box {
+                    position: fixed;
+                    top: 959px;
+                    left: 1651px;
+                    width: 230px;
+                    height: 230px;
+                }
+                #wbox1 {
+                    position: fixed;
+                    top: 499px;
+                    left: 1190px;
+                    width: 231px;
+                    height: 460px;
+                    opacity: 0.9;
+                }
+                #wbox2 {
+                    position: fixed;
+                    top: 1189px;
+                    left: 39px;
+                    width: 461px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #wbox3 {
+                    position: fixed;
+                    top: 1649px;
+                    left: 269px;
+                    width: 461px;
+                    height: 460px;
+                    opacity: 0.9;
+                }
+                #wbox4 {
+                    position: fixed;
+                    top: 1879px;
+                    left: 1651px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #wbox5 {
+                    position: fixed;
+                    top: 2109px;
+                    left: 960px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #whitebutton1 {
+                    position: fixed;
+                    top: 1189px;
+                    left: 1190px;
+                    width: 231px;
+                    height: 230px;
+                }
+                #yb1box {
+                    position: fixed;
+                    top: 1879px;
+                    left: 39px;
+                    width: 461px;
+                    height: 460px;
+                }
+                #yy1 {
+                    position: fixed;
+                    top: 39px;
+                    left: 500px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #yy2box {
+                    position: fixed;
+                    top: 729px;
+                    left: 730px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #yy3 {
+                    position: fixed;
+                    top: 959px;
+                    left: 1190px;
+                    width: 231px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #yy4 {
+                    position: fixed;
+                    top: 1189px;
+                    left: 1651px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #yy5 {
+                    position: fixed;
+                    top: 1419px;
+                    left: 39px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #yy6 {
+                    position: fixed;
+                    top: 1419px;
+                    left: 1421px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #yy7 {
+                    position: fixed;
+                    top: 2109px;
+                    left: 1651px;
+                    width: 230px;
+                    height: 230px;
+                    opacity: 0.9;
+                }
+                #yellowbutton1 {
+                    position: fixed;
+                    top: 1879px;
+                    left: 730px;
+                    width: 230px;
+                    height: 230px;
+                }
+                #childy {
+                    position: fixed;
+                    top: 959px;
+                    left: 730px;
+                    width: 460px;
+                    height: 460px;
+                }
+                #childr {
+                    position: fixed;
+                    top: 959px;
+                    left: 730px;
+                    width: 460px;
+                    height: 460px;
+                }
+                #childg {
+                    position: fixed;
+                    top: 959px;
+                    left: 730px;
+                    width: 460px;
+                    height: 460px;
+                }
+                #childw {
+                    position: fixed;
+                    top: 959px;
+                    left: 730px;
+                    width: 460px;
+                    height: 460px;
+                }
+            </style>
+    </head>
+
+    <body>
+
+        <img id="base" src="images/base.png">
+        <img id="gb1box" src="images/gb1box.png">
+        <img id="gb2box" src="images/gb2box.png">
+        <img id="gb3box" src="images/gb3box.png">
+        <img id="gb4box" src="images/gb4box.png">
+        <img id="gbox1" src="images/gbox1.png">
+        <img id="gbox2" src="images/gbox2.png">
+        <img id="gbox3" src="images/gbox3.png">
+        <img id="gbox4" src="images/gbox4.png">
+        <img id="gbox5" src="images/gbox5.png">
+        <img id="rb1box" src="images/rb1box.png">
+        <img id="rb2box" src="images/rb2box.png">
+        <img id="rbox1" src="images/rbox1.png">
+        <img id="rbox2" src="images/rbox2.png">
+        <img id="rbox3" src="images/rbox3.png">
+        <img id="rbox4" src="images/rbox4.png">
+        <img id="wb1box" src="images/wb1box.png">
+        <img id="wbox1" src="images/wbox1.png">
+        <img id="wbox2" src="images/wbox2.png">
+        <img id="wbox3" src="images/wbox3.png">
+        <img id="wbox4" src="images/wbox4.png">
+        <img id="wbox5" src="images/wbox5.png">
+        <img id="yb1box" src="images/yb1box.png">
+        <img id="yy1" src="images/yy1.png">
+        <img id="yy2box" src="images/yy2box.png">
+        <img id="yy3" src="images/yy3.png">
+        <img id="yy4" src="images/yy4.png">
+        <img id="yy5" src="images/yy5.png">
+        <img id="yy6" src="images/yy6.png">
+        <img id="yy7" src="images/yy7.png">
+        <img id="childw" src="images/childw.png">
+        <img id="childr" src="images/childr.png">
+        <img id="childy" src="images/childy.png">
+        <img id="childg" src="images/childg.png">
+        <img id="yellowbutton1" src="images/yellowbutton1.png">
+        <img id="whitebutton1" src="images/whitebutton1.png">
+        <img id="redbutton1" src="images/redbutton1.png">
+        <img id="redbutton2" src="images/redbutton2.png">
+        <img id="greenbutton1" src="images/greenbutton1.png">
+        <img id="greenbutton2" src="images/greenbutton2.png">
+        <img id="greenbutton3" src="images/greenbutton3.png">
+        <img id="greenbutton4" src="images/greenbutton4.png">
+
+        <script type="text/javascript" src="js/anime.min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
+
+        <script>
+                $(Image).ready(function(){
+            $("#childr").hide();
+            $("#childy").hide();
+            $("#childg").hide();
+            $("#childw").show();
  
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
- 
-<script>
-    $(Image).ready(function(){
-            $("#img01").show();
-            $("#img02").hide();
-            $("#img03").hide();
- 
-            $("#img01").click(function(){
-                $("#img01").hide();
-                $("#img02").show();
-                $("#img03").hide();
-            });
- 
-            $("#img02").click(function(){
-                $("#img03").show();
-                $("#img02").hide();
-                $("#img01").hide();
+            $("#greenbutton1").click(function(){
+                $("#childg").show();
+                $("#childr").hide();
+                $("#childy").hide();
+                $("#childw").hide();
             });
 
-            $("#img03").click(function(){
-                $("#img01").show();
-                $("#img02").hide();
-                $("#img03").hide();
+            $("#redbutton1").click(function(){
+                $("#childr").show();
+                $("#childg").hide();
+                $("#childy").hide();
+                $("#childw").hide();
             });
-        });
-</script>
+
+            $("#whitebutton1").click(function(){
+                $("#childw").show();
+                $("#childg").hide();
+                $("#childy").hide();
+                $("#childr").hide();
+            });
+
+            $("#greenbutton2").click(function(){
+                $("#childg").show();
+                $("#childr").hide();
+                $("#childy").hide();
+                $("#childw").hide();
+            });
+
+            $("#greenbutton3").click(function(){
+                $("#childg").show();
+                $("#childr").hide();
+                $("#childy").hide();
+                $("#childw").hide();
+            });
+
+            $("#greenbutton4").click(function(){
+                $("#childg").show();
+                $("#childr").hide();
+                $("#childy").hide();
+                $("#childw").hide();
+            });
+
+            $("#redbutton2").click(function(){
+                $("#childr").show();
+                $("#childg").hide();
+                $("#childy").hide();
+                $("#childw").hide();
+            });
+
+            $("#yellowbutton1").click(function(){
+                $("#childy").show();
+                $("#childg").hide();
+                $("#childr").hide();
+                $("#childw").hide();
+            });
  
-</html>
+        });
+
+                $('#greenbutton1').on('mouseover', function(){
+                    anime({
+                        targets: '#greenbutton1',
+                        top: '19px' ,
+                        left: '1171px' ,
+                        width: '270px' ,
+                        height: '270px' ,
+                        backgroundColor: '#8338ec',
+                        opacity: '1'
+                    });
+                });
+        
+                $('#greenbutton1').on('mouseout', function(){
+                    anime({
+                        targets: '#greenbutton1',
+                        top: '39px' ,
+                        left: '1190px' ,
+                        width: '230px' ,
+                        height: '230px' ,
+                        backgroundColor: '#9FCA88',
+                        opacity: '0.5'
+                    });
+                });
+        
+                $('#greenbutton1').on('click', function(){
+                    anime({
+                        targets: '#gb1box',
+                        opacity: '0'
+                    });
+                });
+                
+        
+                $('#greenbutton1').on('click', function(){
+                    anime({
+                        targets: '#greenbutton1',
+                        backgroundColor: '#000000'
+                    });
+                });
+
+                $('#redbutton1').on('mouseover', function(){
+                    anime({
+                        targets: '#redbutton1',
+                        top: '19px' ,
+                        left: '940px' ,
+                        width: '270px' ,
+                        height: '270px' ,
+                        backgroundColor: '#8338ec',
+                        opacity: '1'
+                    });
+                });
+        
+                $('#redbutton1').on('mouseout', function(){
+                    anime({
+                        targets: '#redbutton1',
+                        top: '39px' ,
+                        left: '960px' ,
+                        width: '230px' ,
+                        height: '230px' ,
+                        backgroundColor: '#E65B53',
+                        opacity: '0.5'
+                    });
+                });
+        
+                $('#redbutton1').on('click', function(){
+                    anime({
+                        targets: '#rb1box',
+                        opacity: '0'
+                    });
+                });
+                
+        
+                $('#redbutton1').on('click', function(){
+                    anime({
+                        targets: '#redbutton1',
+                        backgroundColor: '#000000'
+                    });
+                });
+
+                $('#whitebutton1').on('mouseover', function(){
+                    anime({
+                        targets: '#whitebutton1',
+                        top: '1169px' ,
+                        left: '1171px' ,
+                        width: '270px' ,
+                        height: '270px' ,
+                        backgroundColor: '#8338ec',
+                        opacity: '1'
+                    });
+                });
+        
+                $('#whitebutton1').on('mouseout', function(){
+                    anime({
+                        targets: '#whitebutton1',
+                        top: '1189px' ,
+                        left: '1190px' ,
+                        width: '230px' ,
+                        height: '230px' ,
+                        backgroundColor: '#ffffff',
+                        opacity: '0.5'
+                    });
+                });
+        
+                $('#whitebutton1').on('click', function(){
+                    anime({
+                        targets: '#wb1box',
+                        opacity: '0'
+                    });
+                });
+                
+        
+                $('#whitebutton1').on('click', function(){
+                    anime({
+                        targets: '#whitebutton1',
+                        backgroundColor: '#000000'
+                    });
+                });
+
+                $('#greenbutton2').on('mouseover', function(){
+                    anime({
+                        targets: '#greenbutton2',
+                        top: '249px' ,
+                        left: '19px' ,
+                        width: '270px' ,
+                        height: '270px' ,
+                        backgroundColor: '#8338ec',
+                        opacity: '1'
+                    });
+                });
+        
+                $('#greenbutton2').on('mouseout', function(){
+                    anime({
+                        targets: '#greenbutton2',
+                        top: '269px' ,
+                        left: '39px' ,
+                        width: '230px' ,
+                        height: '230px' ,
+                        backgroundColor: '#9FCA88',
+                        opacity: '0.5'
+                    });
+                });
+        
+                $('#greenbutton2').on('click', function(){
+                    anime({
+                        targets: '#gb2box',
+                        opacity: '0'
+                    });
+                });
+                
+        
+                $('#greenbutton2').on('click', function(){
+                    anime({
+                        targets: '#greenbutton2',
+                        backgroundColor: '#000000'
+                    });
+                });
+
+                $('#greenbutton3').on('mouseover', function(){
+                    anime({
+                        targets: '#greenbutton3',
+                        top: '709px' ,
+                        left: '480px' ,
+                        width: '270px' ,
+                        height: '270px' ,
+                        backgroundColor: '#8338ec',
+                        opacity: '1'
+                    });
+                });
+        
+                $('#greenbutton3').on('mouseout', function(){
+                    anime({
+                        targets: '#greenbutton3',
+                        top: '729px' ,
+                        left: '500px' ,
+                        width: '230px' ,
+                        height: '230px' ,
+                        backgroundColor: '#9FCA88',
+                        opacity: '0.5'
+                    });
+                });
+        
+                $('#greenbutton3').on('click', function(){
+                    anime({
+                        targets: '#gb3box',
+                        opacity: '0'
+                    });
+                });
+                
+        
+                $('#greenbutton3').on('click', function(){
+                    anime({
+                        targets: '#greenbutton3',
+                        backgroundColor: '#000000'
+                    });
+                });
+
+                $('#greenbutton4').on('mouseover', function(){
+                    anime({
+                        targets: '#greenbutton4',
+                        top: '1399px' ,
+                        left: '710px' ,
+                        width: '270px' ,
+                        height: '270px' ,
+                        backgroundColor: '#8338ec',
+                        opacity: '1'
+                    });
+                });
+        
+                $('#greenbutton4').on('mouseout', function(){
+                    anime({
+                        targets: '#greenbutton4',
+                        top: '1419px' ,
+                        left: '730px' ,
+                        width: '230px' ,
+                        height: '230px' ,
+                        backgroundColor: '#9FCA88',
+                        opacity: '0.5'
+                    });
+                });
+        
+                $('#greenbutton4').on('click', function(){
+                    anime({
+                        targets: '#gb4box',
+                        opacity: '0'
+                    });
+                });
+                
+        
+                $('#greenbutton4').on('click', function(){
+                    anime({
+                        targets: '#greenbutton4',
+                        backgroundColor: '#000000'
+                    });
+                });
+
+                $('#redbutton2').on('mouseover', function(){
+                    anime({
+                        targets: '#redbutton2',
+                        top: '1629px' ,
+                        left: '710px' ,
+                        width: '270px' ,
+                        height: '270px' ,
+                        backgroundColor: '#8338ec',
+                        opacity: '1'
+                    });
+                });
+        
+                $('#redbutton2').on('mouseout', function(){
+                    anime({
+                        targets: '#redbutton2',
+                        top: '1649px' ,
+                        left: '730px' ,
+                        width: '230px' ,
+                        height: '230px' ,
+                        backgroundColor: '#E65B53',
+                        opacity: '0.5'
+                    });
+                });
+        
+                $('#redbutton2').on('click', function(){
+                    anime({
+                        targets: '#rb2box',
+                        opacity: '0'
+                    });
+                });
+                
+        
+                $('#redbutton2').on('click', function(){
+                    anime({
+                        targets: '#redbutton2',
+                        backgroundColor: '#000000'
+                    });
+                });
+
+                $('#yellowbutton1').on('mouseover', function(){
+                    anime({
+                        targets: '#yellowbutton1',
+                        top: '1859px' ,
+                        left: '710px' ,
+                        width: '270px' ,
+                        height: '270px' ,
+                        backgroundColor: '#8338ec',
+                        opacity: '1'
+                    });
+                });
+        
+                $('#yellowbutton1').on('mouseout', function(){
+                    anime({
+                        targets: '#yellowbutton1',
+                        top: '1879px' ,
+                        left: '730px' ,
+                        width: '230px' ,
+                        height: '230px' ,
+                        backgroundColor: '#F4EFA1',
+                        opacity: '0.5'
+                    });
+                });
+        
+                $('#yellowbutton1').on('click', function(){
+                    anime({
+                        targets: '#yb1box',
+                        opacity: '0'
+                    });
+                });
+                
+        
+                $('#yellowbutton1').on('click', function(){
+                    anime({
+                        targets: '#yellowbutton1',
+                        backgroundColor: '#000000'
+                    });
+                });
+
+                $('#yy1').on('click', function(){
+                    anime({
+                        targets: '#yy1',
+                        opacity: '0'
+                    });
+                });
+
+                $('#rbox1').on('click', function(){
+                    anime({
+                        targets: '#rbox1',
+                        opacity: '0'
+                    });
+                });
+
+                $('#wbox1').on('click', function(){
+                    anime({
+                        targets: '#wbox1',
+                        opacity: '0'
+                    });
+                });
+
+                $('#yy2box').on('click', function(){
+                    anime({
+                        targets: '#yy2box',
+                        opacity: '0'
+                    });
+                });
+
+                $('#gbox1').on('click', function(){
+                    anime({
+                        targets: '#gbox1',
+                        opacity: '0'
+                    });
+                });
+
+                $('#rbox2').on('click', function(){
+                    anime({
+                        targets: '#rbox2',
+                        opacity: '0'
+                    });
+                });
+
+                $('#rbox3').on('click', function(){
+                    anime({
+                        targets: '#rbox3',
+                        opacity: '0'
+                    });
+                });
+
+                $('#yy3').on('click', function(){
+                    anime({
+                        targets: '#yy3',
+                        opacity: '0'
+                    });
+                });
+
+                $('#gbox2').on('click', function(){
+                    anime({
+                        targets: '#gbox2',
+                        opacity: '0'
+                    });
+                });
+
+                $('#yy4').on('click', function(){
+                    anime({
+                        targets: '#yy4',
+                        opacity: '0'
+                    });
+                });
+
+                $('#wbox2').on('click', function(){
+                    anime({
+                        targets: '#wbox2',
+                        opacity: '0'
+                    });
+                });
+
+                $('#yy5').on('click', function(){
+                    anime({
+                        targets: '#yy5',
+                        opacity: '0'
+                    });
+                });
+
+                $('#rbox4').on('click', function(){
+                    anime({
+                        targets: '#rbox4',
+                        opacity: '0'
+                    });
+                });
+
+                $('#yy6').on('click', function(){
+                    anime({
+                        targets: '#yy6',
+                        opacity: '0'
+                    });
+                });
+
+                $('#gbox3').on('click', function(){
+                    anime({
+                        targets: '#gbox3',
+                        opacity: '0'
+                    });
+                });
+
+                $('#wbox3').on('click', function(){
+                    anime({
+                        targets: '#wbox3',
+                        opacity: '0'
+                    });
+                });
+
+                $('#gbox4').on('click', function(){
+                    anime({
+                        targets: '#gbox4',
+                        opacity: '0'
+                    });
+                });
+
+                $('#wbox4').on('click', function(){
+                    anime({
+                        targets: '#wbox4',
+                        opacity: '0'
+                    });
+                });
+
+                $('#gbox5').on('click', function(){
+                    anime({
+                        targets: '#gbox5',
+                        opacity: '0'
+                    });
+                });
+
+                $('#wbox5').on('click', function(){
+                    anime({
+                        targets: '#wbox5',
+                        opacity: '0'
+                    });
+                });
+
+                $('#yy7').on('click', function(){
+                    anime({
+                        targets: '#yy7',
+                        opacity: '0'
+                    });
+                });
+            </script>
+
+    </body>
+    </html>
+            
